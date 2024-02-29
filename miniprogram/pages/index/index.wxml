@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+  <image class="bg" src="https://636c-cloud1-0gnar5o72100350e-1324519827.tcb.qcloud.la/cardBg.webp?sign=1d3a4b4e66d5f608d0bf46cbabd0fe7e&t=1708751042"></image>
+  <view class="form">
+    <input disabled="{{!isMe}}" type="text" value="{{toName}}" bindinput="changeToName"/>
+    <textarea disabled="{{!isMe}}" auto-height="true" maxlength="300" class="maintxt" value="{{mainText}}" bindinput="changeText"></textarea>
+    <view class="userInfo">
+      <view class="userAvatar">
+        <view class="avatarWrap" wx:if="{{isMe||(!isMe&&flagA)}}">
+          <image class="avatar" wx:if="{{avatarUrl}}" src="{{avatarUrl}}"></image>
+          <button wx:else disabled="{{!isMe}}" size="mini" class="avatarBtn" open-type="chooseAvatar" bindchooseavatar="bindchooseavatar">
+            <text>选择头像</text>
+          </button>
+        </view>
+        <input wx:if="{{isMe||(!isMe&&flagN)}}" disabled="{{!isMe}}" type="nickname" class="name" placeholder="请输入昵称" value="{{nickname}}" bindblur="changeNickname"/>
+      </view>
+      <view class="last">
+        <input disabled="{{!isMe}}" type="text" maxlength="5" value="{{greeting}}" bindinput="changeGreet"/>
+        <input disabled="{{!isMe}}" type="text" maxlength="5" value="{{fromName}}" bindinput="changeFromName"/>
+      </view>
+    </view>
+  </view>
+  <button class="send" open-type="share" wx:if="{{isMe}}">发送给好友</button>
+  <view style="animation-play-state: {{musicOn?'running':'paused'}};" class="music" bindtap="toggleMusic">
+    <image wx:if="{{musicOn}}" class="musicIcon" src="https://636c-cloud1-0gnar5o72100350e-1324519827.tcb.qcloud.la/music.png?sign=30238f83685d46133d98265fb080568f&t=1708912164"/>
+    <image wx:else class="musicIcon" src="https://636c-cloud1-0gnar5o72100350e-1324519827.tcb.qcloud.la/pause.png?sign=040bdf48e4cfbf7ec068332983eed866&t=1708912192"/>
+  </view>
+</view>

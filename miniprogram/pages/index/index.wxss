@@ -1,0 +1,65 @@
+.container{
+  height: 1200rpx;
+  position: relative;
+  overflow: hidden;
+}
+.bg{
+  height:100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+.form{
+  margin-top: 80rpx;
+  font-size: 40rpx;
+  padding: 50rpx;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 50rpx;
+  position: relative;
+}
+.maintxt{
+  margin-top: 20rpx;
+  margin-bottom: 60rpx;
+}
+.userInfo{
+  display: flex;
+  width: 100%;
+}
+.userAvatar{
+  width: 300rpx;
+  margin-left: 200rpx;
+}
+.avatar{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.last{
+  width: 300rpx;
+}
+.send{
+  margin-top: 100rpx;
+}
+.music{
+  position: absolute;
+  left: 50%;
+  margin-left: -50rpx;
+  margin-top: 100rpx;
+  border:10rpx solid black;
+  line-height: 50%;
+  padding:10rpx;
+  border-radius: 50%;
+  animation: musicRotate 10s linear infinite;
+}
+.musicIcon{
+  height: 100rpx;
+  width: 100rpx;
+}
+@keyframes musicRotate {
+  0%{
+    transform: rotateZ(0deg);
+  }
+  100%{
+    transform: rotateZ(360deg);
+  }
+}
